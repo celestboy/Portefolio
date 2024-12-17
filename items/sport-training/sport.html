@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Entraînement Sport</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../images/logo-sport-training.png">
+
+        <link rel="stylesheet" href="sport.css">
+        <link rel="stylesheet" href="../../style.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <h1>0</h1>
+        <h2>Entraînement</h2>
+
+        <div id="button_div">
+            <button>Start</button>
+        </div>
+
+        <div id="time_info">
+            <p id="info_exercice"></p>
+            <p id="info_break"></p>
+        </div>
+
+
+
+        <!-- preset button -->
+        <div id="preset">
+            Preset
+        </div>
+
+        <!-- preset menu -->
+        <div id="preset_div">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" id="preset_div_cross">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+              
+            <div id="preset_div_container">
+                <div id="first_preset" class="all_preset">
+                    <p class="all_preset_p">40 - 14</p>
+                    <button id="first_preset_button" class="all_preset_button">select</button>
+                </div>
+                <div id="second_preset" class="all_preset">
+                    <p class="all_preset_p">50 - 16</p>
+                    <button id="second_preset_button" class="all_preset_button">select</button>
+                </div>
+                <div id="third_preset" class="all_preset">
+                    <p class="all_preset_p">51 - 18</p>
+                    <button id="third_preset_button" class="all_preset_button">select</button>
+                </div>
+                <div id="fourth_preset" class="all_preset">
+                    <p class="all_preset_p">55 - 18</p>
+                    <button id="fourth_preset_button" class="all_preset_button">select</button>
+                </div>
+                <div id="fifth_preset" class="all_preset">
+                    <p class="all_preset_p">60 - 20</p>
+                    <button id="fifth_preset_button" class="all_preset_button">select</button>
+                </div>
+                <div id="sixth_preset" class="all_preset">
+                    <p class="all_preset_p">30 - 10</p>
+                    <button id="sixth_preset_button" class="all_preset_button">select</button>
+                </div>
+                <div id="seventh_preset" class="all_preset">
+                    <p class="all_preset_p">55 - 25</p>
+                    <button id="seventh_preset_button" class="all_preset_button">select</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="time_def_container">
+            <div id="time_def">
+                <div id="exercice_time_div">
+                    <input type="text" id="exercice_time" placeholder="Exercice (base: 45s)">
+                    <input type="button" id="exercice_time_button" onclick="controle1()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" id="check1">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                </div>
+
+                <div id="break_time_div">
+                    <input type="text" id="break_time" placeholder="Pause (base: 15s)">
+                    <input type="button" id="break_time_button" onclick="controle2()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" id="check2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="invisible_block"></div>
+
+        <a href="../../index.html" class="retour_bouton">Retour</a>
+
+        <script src="sport.js"></script>
+    </body>
+</html>
