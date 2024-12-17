@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../../../style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>R1 / URUS</title>
+</head>
+<body>
+
+    <div class="h-screen w-screen flex items-center justify-center relative">
+        <div id="vehicle1" class="h-full w-full bg-red-400 flex flex-col items-center">
+            <img class="h-1/3 mt-16 md:mt-24" src="../content/yamaha-R1.png" alt="">
+            <h2 class="text-[3vh] text-black font-bold mt-[1.5vh]">Yamaha R1 2024</h2>
+
+            <div class="text-center text-gray-900 text-[2vh] m-[1vh]">
+                <ul class="infos1 space-y-[0.5vw] font-medium">
+                    <li>Prix : 20.500 €</li>
+                    <li>Accélération (0 à 100) : 3,0s</li>
+                    <li>V max : 300km/h</li>
+
+                    <ul class="flex flex-col lg:hidden space-y-[0.5vw]">
+                        <li>Puissance : 200ch (147kW)</li>
+                        <li>Poids : 200Kg</li>
+                        <li>Rapport poids/puissance : 1,005Kg/ch</li>
+                    </ul>
+
+                    <audio id="audio-R1">
+                        <source src="../content/son moteur yamaha R1.mp3" type="audio/mpeg">
+                        Audio non supporté
+                    </audio>
+                    <button onclick="document.getElementById('audio-R1').play()" class="text-sky-600">Vrooom</button>
+                    <button onclick="document.getElementById('audio-R1').pause()" class="text-sky-200">Pause</button>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w-28 h-full bg-lime-400 transform -skew-x-6 absolute z-20 hidden xl:flex"></div>
+
+        <div id="vehicle2" class="h-full w-full bg-blue-500 flex flex-col items-center hidden">
+            <img class="h-1/3 mt-16 md:mt-24" src="../content/URUS.png" alt="">
+            <h2 class="text-[3vh] text-yellow-100 font-bold mt-[1.5vh]">Lamborghini URUS 2024</h2>
+
+            <div class="text-center text-[2vh] m-[1vh]">
+                <ul class="infos1 space-y-[0.5vw] font-medium">
+                    <li>Prix : 225.000 €</li>
+                    <li>Accélération (0 à 100) : 3,6s</li>
+                    <li>V max : 305km/h</li>
+
+                    <ul class="flex flex-col lg:hidden space-y-[0.5vw]">
+                        <li>Puissance : 650ch (478kW)</li>
+                        <li>Poids : 2.200Kg</li>
+                        <li>Rapport poids/puissance : 3,38Kg/ch</li>
+                    </ul>
+
+                    <audio id="audio-URUS">
+                        <source src="../content/son démarrage URUS.mp3" type="audio/mpeg">
+                        Audio non supporté
+                    </audio>
+                    <button onclick="document.getElementById('audio-URUS').play()" class="text-indigo-800">Vrooom</button>
+                    <button onclick="document.getElementById('audio-URUS').pause()" class="text-indigo-300">Pause</button>
+                </ul>
+            </div>
+        </div>
+
+        <button id="boutonChange" class="absolute bottom-10 px-4 p-2 bg-gray-800 text-white rounded lg:hidden">
+            Switch
+        </button>
+    </div>
+
+    <a href="../../../index.html" class="retour_bouton">Retour</a>
+
+
+    <script>
+        const button = document.getElementById('boutonChange');
+        const vehicle1 = document.getElementById('vehicle1');
+        const vehicle2 = document.getElementById('vehicle2');
+
+        function checkWidthEcran() {
+            if (window.innerWidth >= 1024) {
+                vehicle1.classList.remove('hidden');
+                vehicle2.classList.remove('hidden');
+                button.classList.add('hidden');
+            } else {
+                button.classList.remove('hidden');
+                vehicle1.classList.remove('hidden');
+                vehicle2.classList.add('hidden');
+            }
+        }
+
+        checkWidthEcran();
+
+        window.addEventListener('resize', checkWidthEcran);
+
+        button.addEventListener('click', () => {
+            if (vehicle1.classList.contains('hidden')) {
+                vehicle1.classList.remove('hidden');
+                vehicle2.classList.add('hidden');
+            } else {
+                vehicle1.classList.add('hidden');
+                vehicle2.classList.remove('hidden');
+            }
+        });
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+
+
+@mixin button-style {
+    position: absolute;
+    bottom: 1.5rem;
+    padding: .8rem 1.5rem;
+    border-radius: 5rem;
+    border: 0;
+    font-weight: 600;
+    cursor: pointer;
+}

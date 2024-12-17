@@ -1,0 +1,95 @@
+
+
+@use 'variables';
+@use 'mixin';
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    font-family: "roboto";
+}
+
+.container {
+    width: 70%;
+    height: max-content;
+    max-height: 75%;
+    display: flex;
+    margin: auto;
+    border-radius: 7px;
+    overflow: hidden;
+
+    .box {
+        width: 33%;
+        color: variables.$text-color;
+        flex: 1;
+        padding: 2rem;
+        position: relative;
+    }
+
+    .title {
+        text-transform: uppercase;
+        font-weight: 500;
+        margin: 2rem 0;
+    }
+
+    .text {
+        margin-bottom: 6rem;
+        font-weight: 200;
+        font-size: .8rem;
+    }
+
+    .button {
+        @include mixin.button-style;
+    }
+
+    &__left {
+        background-color: variables.$color-left;
+        &__button--left {
+            color: variables.$color-left;
+        }
+    }
+
+    &__middle {
+        background-color: variables.$color-middle;
+        &__button--middle {
+            color: variables.$color-middle;
+        }
+    }
+
+    &__right {
+        background-color: variables.$color-right;
+        &__button--right {
+            color: variables.$color-right;
+        }
+    }
+}
+
+
+@media screen and (max-width: variables.$medium-screen) {
+    body {
+        height: initial;
+        padding: 2rem;
+
+        .container {
+        flex-direction: column;
+
+            .box {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: variables.$small-screen) {
+    .container {
+        width: 100%;
+    }
+}

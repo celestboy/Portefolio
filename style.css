@@ -1,0 +1,46 @@
+
+
+
+    /* GENERAL */
+
+.retour_bouton {
+    z-index: 50;
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    text-decoration: none;
+    color: rgb(101, 97, 97);
+    font-weight: 800;
+    font-family: "Arial", sans-serif;
+
+    transition: .3s;
+}
+
+.retour_bouton:hover {
+    color: black;
+
+}
+
+
+    /* INDEX.html */
+
+body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+}
+
+.project-link {
+    transition: all 0.3s ease;
+    display: block;
+    padding: 12px 20px;
+    margin: 10px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+} .project-link:hover {
+    transform: translateX(10px);
+    background-color: #e6f2ff;
+    box-shadow: 0 6px 8px rgba(0,0,0,0.15);
+}
+        
+        

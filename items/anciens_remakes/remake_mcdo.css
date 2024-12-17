@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* HEADER */
+
+header {
+    background-color: #fff;
+    z-index: 2;
+    display: flex;
+    position: fixed;
+    height: 80px;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    border-bottom: 0.5px solid rgb(55, 55, 55);
+}
+
+header div {
+    display: flex;
+    width: 80%;
+    margin: auto;
+    align-items: center;
+}
+
+header img {
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+}
+
+header ul {
+    position: relative;
+    display: flex;
+    list-style-type: none;
+}
+
+header ul li {
+    margin-left: 30px;
+    display: flex;
+}
+header ul li a {
+    display: flex;
+    padding: 5px;
+}
+
+header a {
+    color: black;
+    text-decoration: none;
+    transition: 0.1s;
+} header a:hover {color: #505050;}
+
+.chevron-down_svg {
+    height: 20px;
+    margin-left: 4px;
+}
+
+
+#search_svg {
+    height: 30px;
+    padding: 3px;
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+header div p {
+    opacity: 0.2;
+    font-size: 23px;
+    margin-left: 15px;
+}
+
+#localisation_svg {
+    height: 30px;
+    padding: 3px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+#button_connection {
+    height: 35px;
+    margin-left: 30px;
+    padding: 0 15px;
+    background-color: #f7f7f7;
+    border: 0.3px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#button_command {
+    height: 35px;
+    margin-left: 30px;
+    padding: 0 15px;
+    background-color: #ffb700;
+    border: 0.3px solid black;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+
+
+/* MAIN */
+
+main {
+    background-color: #e9e9e9;
+    height: 300vh
+}
+
+
+main section {
+    position: relative;
+    top: 110px;
+    height: 600px;
+    width: 80%;
+    margin: auto;
+    border-radius: 5px 5px 0 0;
+}
+
+#image1 {
+    position: relative;
+    object-fit: cover;
+    width: 100%;
+    height: 550px;
+    border-radius: 7px 7px 0 0;
+}
+
+#div_image1 {
+    position: relative;
+    top: -320px;
+    left: 50px;
+    background-color: rgba(221, 221, 221, 0.8);
+    width: 340px;
+    border-radius: 7px;
+    padding: 15px;
+}
+#div_image1 h1 {
+    font-family: 'Ubuntu', sans-serif;
+    color: #323232;
+    margin-bottom: 15px;
+    cursor: default;
+}
+
+#div_image1 p {
+    font-family: 'Ubuntu', sans-serif;
+    margin-bottom: 20px;
+    cursor: default;
+}
+
+#div_image1 button {
+    position: relative;
+    background-color: rgba(188, 225, 239, 0.8);
+    border: 1px solid grey;
+    border-radius: 7px;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 10px;
+    left: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+} #div_image1 button:hover {text-decoration: underline; background-color: rgba(179, 226, 222, 0.8); border-radius: 10px; padding: 10px 9px;}
+
+
+main section nav {
+    display: flex;
+    position: relative;
+    bottom: 170px;
+    background-color: #fff;
+    align-items: center;
+    border-radius: 0 0 3px 3px;
+}
+
+main section nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: auto;
+}
+
+main section nav ul li {
+    padding: 10px;
+    display: flex;
+}
+
+main section nav ul li a {
+    display: flex;
+    text-decoration: none;
+    color: #2e2e2e;
+    padding: 10px 20px;
+    border-radius: 20px;
+} main section nav ul li a:hover {color: black; background-color: rgba(216, 216, 216, 0.1);}

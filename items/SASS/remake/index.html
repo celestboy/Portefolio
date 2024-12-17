@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intégration & Préprocesseur</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../../style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="../../../index.html" class="retour_bouton">Retour</a>
+    <header class="header">
+        <nav class="header__nav">
+            <svg class="header__nav__logo" width="130" height="50" viewBox="0 0 70 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_53_1649)">
+                    <path d="M20.1828 20.1301C20.5671 20.1308 20.8851 20.2615 21.1398 20.5191C21.4008 20.7767 21.5262 21.0975 21.5255 21.4784C21.5248 21.8593 21.3983 22.1734 21.1363 22.4364C20.8807 22.693 20.5623 22.8226 20.178 22.8219L19.3495 22.8204L19.347 24.2235L18.6792 24.2223L18.6865 20.1306L20.1828 20.1333L20.1828 20.1301ZM20.1791 22.1871C20.5729 22.1878 20.857 21.8899 20.8577 21.4741C20.8584 21.0582 20.5755 20.7593 20.1817 20.7586L19.3532 20.7571L19.3507 22.1824L20.1792 22.1839L20.1791 22.1871Z" fill="#103559"/>
+                    <path d="M22.5282 23.0577C22.624 23.4679 23 23.6941 23.5095 23.695C23.8592 23.6956 24.1225 23.5819 24.3027 23.3626L24.8484 23.6447C24.5479 24.0366 24.098 24.232 23.5052 24.2309C23.009 24.2301 22.6029 24.0946 22.297 23.8305C21.9911 23.5605 21.8385 23.2205 21.8393 22.8105C21.84 22.4005 21.9938 22.0728 22.294 21.8039C22.5942 21.5291 22.9874 21.3951 23.4603 21.396C23.9066 21.3968 24.276 21.538 24.5619 21.8138C24.8511 22.0896 24.9971 22.4296 24.9964 22.822C24.9963 22.8806 24.9894 22.9626 24.9726 23.065L22.5315 23.0607L22.5282 23.0577ZM24.3274 22.5865C24.2349 22.15 23.8857 21.9209 23.4527 21.9202C22.9632 21.9193 22.6197 22.1735 22.5257 22.5833L24.3274 22.5865Z" fill="#103559"/>
+                    <path d="M26.8917 21.8863L26.1671 21.885L26.1645 23.292C26.1639 23.6676 26.4086 23.6617 26.8886 23.6402L26.8876 24.21C25.9211 24.3261 25.5307 24.0612 25.5321 23.294L25.5346 21.887L24.9974 21.8861L24.9985 21.2749L25.5357 21.2758L25.5368 20.6424L26.1696 20.4557L26.1681 21.277L26.8928 21.2783L26.8917 21.8895L26.8917 21.8863Z" fill="#103559"/>
+                    <path d="M28.4476 22.5687C28.8744 22.6603 29.4273 22.8343 29.4142 23.4118C29.4137 23.6698 29.3081 23.8748 29.1034 24.021C28.8987 24.1672 28.6431 24.2401 28.3334 24.2395C27.7862 24.2385 27.3807 24.0003 27.2041 23.6072L27.7187 23.3179C27.8114 23.576 28.0156 23.7083 28.3313 23.7089C28.647 23.7094 28.8035 23.6071 28.8039 23.4078C28.8042 23.2348 28.5729 23.1318 28.2784 23.0609C27.8637 22.9575 27.3047 22.7953 27.3178 22.2266C27.3182 21.9774 27.4118 21.7782 27.6075 21.629C27.8002 21.4769 28.0468 21.4041 28.3324 21.4046C28.7924 21.4054 29.1619 21.6172 29.3566 21.9693L28.8511 22.244C28.7582 22.0386 28.581 21.9357 28.3315 21.9352C28.106 21.9348 27.9284 22.0312 27.9281 22.2218C27.9278 22.4006 28.1591 22.4919 28.4476 22.5745L28.4476 22.5687Z" fill="#103559"/>
+                    <path d="M33.2076 20.7554C32.7103 20.714 32.4681 20.9036 32.4673 21.3211L32.4672 21.3772L33.2065 21.3786L33.2055 21.9768L32.4661 21.9754L32.4621 24.2468L31.7841 24.2456L31.7882 21.9742L31.3112 21.9734L31.3123 21.3752L31.7892 21.376L31.7893 21.3199C31.7907 20.5348 32.2821 20.1057 33.2087 20.1572L33.2076 20.7554Z" fill="#103559"/>
+                    <path d="M33.9794 23.8395C33.6745 23.5637 33.5192 23.2296 33.5199 22.8313C33.5206 22.433 33.6771 22.0994 33.983 21.8246C34.2888 21.5499 34.6658 21.4159 35.101 21.4166C35.5363 21.4174 35.9128 21.5528 36.2176 21.8286C36.5224 22.1045 36.6777 22.4386 36.677 22.8369C36.6763 23.2352 36.5198 23.5688 36.214 23.8435C35.9082 24.1183 35.5377 24.2523 35.0959 24.2515C34.6542 24.2507 34.2842 24.1154 33.9794 23.8395ZM35.097 23.6863C35.36 23.6868 35.5811 23.6052 35.76 23.4444C35.9389 23.2837 36.0302 23.0788 36.0307 22.8357C36.0311 22.5927 35.9405 22.3875 35.7622 22.2261C35.5838 22.0647 35.3631 21.9823 35.1 21.9819C34.8369 21.9814 34.6159 22.063 34.437 22.2237C34.258 22.3845 34.1667 22.5893 34.1663 22.8324C34.1659 23.0755 34.2564 23.2807 34.4348 23.442C34.6131 23.6034 34.8339 23.6858 35.097 23.6863Z" fill="#103559"/>
+                    <path d="M37.6446 21.9387C37.8086 21.5941 38.1227 21.4222 38.5737 21.423L38.5725 22.0735C38.3274 22.0549 38.1083 22.112 37.9218 22.2387C37.7353 22.3624 37.6434 22.568 37.6429 22.8524L37.6404 24.2562L36.9901 24.2551L36.995 21.4686L37.6454 21.4697L37.6446 21.9387Z" fill="#103559"/>
+                    <path d="M43.3069 23.0971C43.3063 23.4307 43.1938 23.71 42.9665 23.932C42.7391 24.154 42.4636 24.2647 42.1368 24.2641L40.4634 24.2611L40.4707 20.1663L42.02 20.169C42.3377 20.1696 42.6099 20.2813 42.8274 20.4977C43.0509 20.7141 43.1593 20.9843 43.1588 21.3052C43.1581 21.661 43.0245 21.9371 42.7609 22.1399C43.0994 22.328 43.3046 22.6683 43.3038 23.0939L43.3069 23.0971ZM41.1111 20.7996L41.1092 21.8765L42.0169 21.8781C42.3014 21.8786 42.5197 21.6439 42.5202 21.3421C42.5208 21.0404 42.3033 20.8049 42.0189 20.8044L41.1111 20.8028L41.1111 20.7996ZM42.1379 23.6319C42.4344 23.6324 42.6679 23.3819 42.6684 23.061C42.669 22.7402 42.4365 22.4888 42.1399 22.4883L41.1081 22.4864L41.106 23.6332L42.1379 23.6351L42.1379 23.6319Z" fill="#103559"/>
+                    <path d="M44.6271 23.0971C44.7228 23.5072 45.0983 23.7334 45.6073 23.7343C45.9566 23.7349 46.2197 23.6212 46.3997 23.4019L46.9448 23.684C46.6447 24.0759 46.1952 24.2713 45.6031 24.2702C45.1074 24.2694 44.7017 24.1339 44.3961 23.8698C44.0906 23.5998 43.9381 23.2598 43.9389 22.8498C43.9396 22.4398 44.0932 22.1121 44.3931 21.8432C44.693 21.5684 45.0858 21.4344 45.5582 21.4353C46.004 21.4361 46.373 21.5773 46.662 21.8531C46.9509 22.1289 47.0967 22.4689 47.096 22.8613C47.0959 22.9199 47.0891 23.0019 47.0722 23.1043L44.6337 23.1L44.6271 23.0971ZM46.4244 22.6258C46.332 22.1893 45.9831 21.9602 45.5506 21.9595C45.0616 21.9586 44.7185 22.2128 44.6246 22.6226L46.4277 22.6258L46.4244 22.6258Z" fill="#103559"/>
+                    <path d="M48.3382 22.6043C48.765 22.696 49.3179 22.8699 49.3048 23.4474C49.3044 23.7054 49.1988 23.9104 48.9941 24.0566C48.7894 24.2029 48.5337 24.2757 48.224 24.2751C47.6768 24.2742 47.2714 24.036 47.0947 23.6428L47.6093 23.3535C47.7021 23.6117 47.9063 23.7439 48.222 23.7445C48.5376 23.7451 48.6942 23.6427 48.6945 23.4434C48.6948 23.2704 48.4635 23.1674 48.169 23.0965C47.7543 22.9932 47.1954 22.8309 47.2084 22.2622C47.2088 22.013 47.3024 21.8138 47.4981 21.6647C47.6908 21.5126 47.9374 21.4397 48.2231 21.4402C48.6831 21.4411 49.0525 21.6528 49.2473 22.0049L48.7417 22.2796C48.6489 22.0742 48.4717 21.9713 48.2221 21.9709C47.9966 21.9705 47.8191 22.0669 47.8187 22.2574C47.8184 22.4363 48.0497 22.5276 48.3382 22.6102L48.3382 22.6043Z" fill="#103559"/>
+                    <path d="M51.5177 21.9302L50.7942 21.9289L50.7917 23.3359C50.7911 23.7115 51.0354 23.7056 51.5145 23.6842L51.5135 24.254C50.5487 24.37 50.1589 24.1051 50.1603 23.338L50.1628 21.931L49.6234 21.93L49.6245 21.3188L50.1639 21.3198L50.165 20.6863L50.7968 20.4997L50.7953 21.3209L51.5188 21.3222L51.5177 21.9334L51.5177 21.9302Z" fill="#103559"/>
+                    <path d="M15.677 2.51683C15.5958 1.702 15.2688 1.53722 14.6332 1.53609L11.9257 1.53125C11.3314 1.53019 11.1882 1.63098 10.9614 2.28421L8.91895 8.88328L6.90009 2.27695C6.67563 1.62291 6.53281 1.52161 5.93855 1.52055L3.22782 1.51571C2.59225 1.51457 2.26464 1.67818 2.18056 2.49272L0.720998 15.4524C0.659784 15.9196 0.700763 16.106 1.1106 16.1667L4.20822 16.6207C4.67844 16.6815 4.78349 16.5806 4.84449 16.2334L5.53223 10.1624L6.97753 15.852C7.1197 16.3196 7.30368 16.5062 7.77718 16.5071L10.0335 16.5111C10.5038 16.5119 10.6916 16.3291 10.8355 15.8589L12.282 10.1745L12.9671 16.2479C13.0269 16.5954 13.1316 16.6966 13.602 16.6375L16.7012 16.1946C17.1113 16.1353 17.1529 15.9523 17.0934 15.4817L15.677 2.51683Z" fill="#103559"/>
+                    <path d="M23.1327 5.01594C19.6554 5.00972 17.7614 7.3897 17.7555 10.6761C17.7496 13.9626 19.6352 16.3493 23.1124 16.3555C26.5897 16.3617 28.4838 13.9817 28.4896 10.6953C28.4955 7.40888 26.61 5.02215 23.1327 5.01594ZM23.1191 12.647C22.2844 12.6455 21.8385 11.8627 21.8406 10.6803C21.8428 9.49796 22.2914 8.71672 23.1261 8.71821C23.9608 8.7197 24.4066 9.50254 24.4045 10.6849C24.4024 11.8673 23.9537 12.6485 23.1191 12.647Z" fill="#103559"/>
+                    <path d="M36.2979 5.0458C35.5851 5.04453 30.2513 5.17663 29.9035 5.66383C29.7613 5.82723 29.7609 6.05069 29.7602 6.43465L29.9084 15.2913C29.9258 16.1033 30.1115 16.3681 30.8211 16.3693L33.3065 16.3738C34.0193 16.375 34.2217 16.111 34.2231 15.299L34.234 9.18392C34.5402 9.08375 34.6412 9.04302 34.9882 9.02161C35.455 9.00356 35.6787 9.14558 35.8231 9.52981C35.9233 9.93598 35.9443 10.5466 35.9428 11.3775L35.9169 15.2989C35.9154 16.1109 36.1389 16.3757 36.8517 16.3769L39.397 16.3815C40.1098 16.3828 40.2932 16.1187 40.3136 15.3068L40.4873 9.90322C40.5086 8.58141 40.2269 7.36292 39.5567 6.4679C38.8454 5.5728 37.7866 5.04217 36.3011 5.03952L36.2979 5.0458Z" fill="#103559"/>
+                    <path d="M45.8494 6.31648L43.291 6.31191C42.591 6.31066 42.3892 6.55171 42.3878 7.36372L42.3736 15.3177C42.3721 16.1266 42.573 16.3903 43.273 16.3915L45.8717 16.3962C46.5717 16.3974 46.7921 16.1345 46.7935 15.3256L46.7674 7.37155C46.7689 6.58148 46.5494 6.31774 45.8494 6.31648Z" fill="#103559"/>
+                    <path d="M44.7663 0.959797C43.251 0.95709 42.3968 1.88865 42.3945 3.16048C42.3922 4.43231 43.2431 5.36692 44.7584 5.36963C46.2737 5.37233 47.1279 4.44077 47.1302 3.16894C47.1324 1.89711 46.2815 0.962505 44.7663 0.959797Z" fill="#103559"/>
+                    <path d="M55.7452 5.40427L54.1714 5.40146L54.1763 2.66305C54.1778 1.85191 53.9699 1.6063 53.2487 1.60501L50.8064 1.60065C50.082 1.59936 49.854 1.86304 49.8525 2.65533L49.8476 5.39374L48.6072 5.39152C47.9245 5.3903 47.7576 5.51262 47.7565 6.14141L47.7526 8.35478C47.7514 8.98357 47.9179 9.10649 48.6006 9.10771L49.841 9.10992L49.8341 12.9644C49.8295 15.5614 51.212 16.7208 53.8211 16.7255C54.5871 16.7269 55.3532 16.6685 56.0779 16.5252C56.3889 16.466 56.4724 16.3844 56.4729 16.0794L56.3759 12.973C56.3764 12.7089 56.2323 12.608 55.963 12.6673C55.7353 12.7266 55.5077 12.7671 55.1968 12.7665C54.5974 12.7655 54.1618 12.5603 54.1634 11.6894L54.168 9.11137L55.7417 9.11418C56.4245 9.1154 56.5913 8.99308 56.5925 8.36429L56.5964 6.15092C56.5975 5.52212 56.4311 5.39921 55.7484 5.39799L55.7452 5.40427Z" fill="#103559"/>
+                    <path d="M62.5966 5.08649C59.1193 5.08028 57.2252 7.46026 57.2194 10.7467C57.2135 14.0331 59.099 16.4198 62.5763 16.4261C66.0536 16.4323 67.9476 14.0523 67.9535 10.7659C67.9594 7.47944 66.0738 5.09271 62.5966 5.08649ZM62.5829 12.7176C61.7483 12.7161 61.3024 11.9332 61.3045 10.7509C61.3066 9.56851 61.7553 8.78727 62.59 8.78876C63.4246 8.79026 63.8705 9.57309 63.8684 10.7555C63.8663 11.9378 63.4176 12.7191 62.5829 12.7176Z" fill="#103559"/>
+                    <path d="M68.9614 5.54192C68.597 5.27809 67.9992 5.42908 67.6211 5.87874C67.2429 6.3284 67.2324 6.90738 67.5936 7.17121C67.9579 7.43504 68.5557 7.28405 68.9339 6.83439C69.3121 6.38473 69.3225 5.80575 68.9614 5.54192Z" fill="#103559"/>
+                    <path d="M60.3775 4.76109C60.8065 4.696 61.0884 4.15403 61.0067 3.5487C60.9249 2.94337 60.5147 2.50364 60.0857 2.56872C59.6568 2.6338 59.3749 3.17577 59.4566 3.78111C59.5384 4.38644 59.9486 4.82617 60.3775 4.76109Z" fill="#103559"/>
+                    <path d="M65.9325 5.32737C66.5252 5.6279 67.4243 5.06311 67.9374 4.0647C68.4505 3.06629 68.3868 2.01152 67.7908 1.71098C67.1981 1.41045 66.299 1.97524 65.7859 2.97365C65.2728 3.97205 65.3365 5.02683 65.9325 5.32737Z" fill="#103559"/>
+                    <path d="M62.8632 4.45188C63.461 4.52904 64.0425 3.74698 64.1598 2.70729C64.2771 1.66443 63.888 0.760156 63.2873 0.682992C62.6895 0.605833 62.108 1.38789 61.9907 2.42759C61.8734 3.47045 62.2625 4.37472 62.8632 4.45188Z" fill="#103559"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_53_1649">
+                        <rect width="68.8249" height="23.9391" fill="white" transform="translate(0.725586 0.566162) rotate(0.102381)"/>
+                    </clipPath>
+                </defs>
+            </svg>
+
+            <button class="header__nav__burger">
+                <span class="header__nav__burger--bar"></span>
+                <span class="header__nav__burger--bar"></span>
+                <span class="header__nav__burger--bar"></span>
+            </button>
+
+            <div class="header__nav__responsive__container">
+                <ul class="header__nav__list">
+                    <li class="header__nav__list__item"><a href="#" class="header__nav__list__item__link">Home</a></li>
+                    <li class="header__nav__list__item"><a href="#" class="header__nav__list__item__link">Category</a></li>
+                    <li class="header__nav__list__item"><a href="#" class="header__nav__list__item__link">About</a></li>
+                    <li class="header__nav__list__item"><a href="#" class="header__nav__list__item__link">Contact</a></li>
+                </ul>
+
+                <div class="header__nav__searchbar">
+                    <svg class="header__nav__searchbar__loupe" width="25" height="25" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.034 9.47059L8.18704 7.63196C8.90686 6.73772 9.25671 5.60168 9.16464 4.45743C9.07258 3.31317 8.5456 2.24768 7.69207 1.48003C6.83854 0.712383 5.72333 0.300933 4.57576 0.330283C3.42818 0.359633 2.33546 0.827552 1.52229 1.63783C0.709112 2.4481 0.237292 3.53914 0.203841 4.6866C0.17039 5.83407 0.577852 6.95074 1.34244 7.80701C2.10704 8.66328 3.17064 9.19406 4.31456 9.29021C5.45848 9.38636 6.59576 9.04057 7.49256 8.32395L9.32461 10.1626C9.37089 10.2094 9.42598 10.2466 9.48671 10.272C9.54744 10.2974 9.61261 10.3106 9.67845 10.3107C9.74428 10.3108 9.80949 10.2979 9.87031 10.2727C9.93113 10.2475 9.98636 10.2105 10.0328 10.1638C10.1229 10.071 10.1733 9.9468 10.1736 9.81746C10.1738 9.68812 10.1238 9.56375 10.034 9.47059V9.47059ZM4.69468 8.31895C4.00421 8.31772 3.3296 8.11176 2.75617 7.72713C2.18275 7.3425 1.73626 6.79646 1.47316 6.15807C1.21007 5.51968 1.14219 4.81761 1.2781 4.14064C1.41402 3.46367 1.74763 2.84221 2.23674 2.35484C2.72586 1.86747 3.34851 1.53608 4.02596 1.40259C4.70341 1.26909 5.40523 1.33948 6.04268 1.60486C6.68012 1.87023 7.22456 2.31867 7.60714 2.89347C7.98973 3.46826 8.19327 4.1436 8.19204 4.83408C8.19038 5.75998 7.82098 6.6473 7.1651 7.30084C6.50922 7.95438 5.62058 8.32061 4.69468 8.31895V8.31895Z" fill="#667479"/>
+                    </svg>
+
+                    <input class="header__nav__searchbar__input" type="text" placeholder="Search something here!">
+                </div>
+
+                <button class="header__nav__button">Login</button>
+            </div>
+        </nav>
+
+        <section class="header__section">
+            <h1 class="header__section__title">One more friend</h1>
+
+            <h2 class="header__section__subtitle">Thousands more fun!</h2>
+
+            <p class="header__section__text">Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!</p>
+
+            <div class="header__section__button">
+                <button class="header__section__button--intro">View Intro
+                    <svg class="header__section__button--intro--svg"  width="25" height="25" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.86651 4.35738L4.8601 7.94824L7.85569 6.15816L4.86651 4.35738Z" fill="#003459" stroke="#003459" stroke-width="0.897717" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+
+                <button class="header__section__button--explore">Explore Now</button>
+            </div>
+        </section>
+
+        <img class="header__image" src="images/header-image.png" alt="image de page principale">
+
+    </header>
+
+    <main class="main">
+        <section class="main__section0">
+            <div class="main__section0__header">
+                <p class="main__section0__header__text1">Whats new ?</p>
+                <h3 class="main__section0__header__text2">Take a look at some of our pets</h3>
+
+                <button class="main__section0__header__button">View more
+                    <svg class="main__section0__header__button--svg" width="10" height="15" viewBox="0 0 4 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.27637 0.642578L3.26773 2.64107L1.26924 4.63242" stroke="#003459" stroke-width="0.897717" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="main__section1__articles">
+                <article class="main__section1__articles__article">
+                    <img class="main__section1__articles__article__img" src="images/chien.png" alt="chien disponible à l'adoption">
+                    
+                    <h3 class="main__section1__articles__article__title">MO231 - Pomeranian White</h3>
+
+                    <p class="main__section1__articles__article__text">
+                        Genre: <span class="main__section1__articles__article__text--span">Male</span>
+                        <svg width="10" height="10" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.02587 2.23822C2.18415 2.0805 2.2635 1.88674 2.26389 1.66411C2.26429 1.44147 2.18564 1.24742 2.02791 1.09633C1.87738 0.938059 1.68361 0.858714 1.46098 0.858316C1.23835 0.857918 1.0443 0.93657 0.886018 1.09429C0.727751 1.24482 0.648405 1.43858 0.648007 1.66122C0.647609 1.88385 0.726262 2.0779 0.883977 2.23618C1.04169 2.39446 1.23546 2.47381 1.45809 2.4742C1.68073 2.4746 1.87477 2.39595 2.02587 2.23822Z" fill="#667479"/>
+                        </svg>
+                        Âge: <span class="main__section1__articles__article__text--span">02 months</span>
+                    </p>
+
+                    <p class="main__section1__articles__article__price">6.900.000 VND</p>
+                </article>
+
+                <article class="main__section1__articles__article">
+                    <img class="main__section1__articles__article__img" src="images/chien2.png" alt="chien disponible à l'adoption">
+                    
+                    <h3 class="main__section1__articles__article__title">MO231 - Pomeranian White</h3>
+
+                    <p class="main__section1__articles__article__text">
+                        Genre: <span class="main__section1__articles__article__text--span">Male</span>
+                        <svg width="10" height="10" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.02587 2.23822C2.18415 2.0805 2.2635 1.88674 2.26389 1.66411C2.26429 1.44147 2.18564 1.24742 2.02791 1.09633C1.87738 0.938059 1.68361 0.858714 1.46098 0.858316C1.23835 0.857918 1.0443 0.93657 0.886018 1.09429C0.727751 1.24482 0.648405 1.43858 0.648007 1.66122C0.647609 1.88385 0.726262 2.0779 0.883977 2.23618C1.04169 2.39446 1.23546 2.47381 1.45809 2.4742C1.68073 2.4746 1.87477 2.39595 2.02587 2.23822Z" fill="#667479"/>
+                        </svg>
+                        Âge: <span class="main__section1__articles__article__text--span">02 months</span>
+                    </p>
+
+                    <p class="main__section1__articles__article__price">6.900.000 VND</p>
+                </article>
+
+                <article class="main__section1__articles__article">
+                    <img class="main__section1__articles__article__img" src="images/chien.png" alt="chien disponible à l'adoption">
+                    
+                    <h3 class="main__section1__articles__article__title">MO231 - Pomeranian White</h3>
+
+                    <p class="main__section1__articles__article__text">
+                        Genre: <span class="main__section1__articles__article__text--span">Male</span>
+                        <svg width="10" height="10" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.02587 2.23822C2.18415 2.0805 2.2635 1.88674 2.26389 1.66411C2.26429 1.44147 2.18564 1.24742 2.02791 1.09633C1.87738 0.938059 1.68361 0.858714 1.46098 0.858316C1.23835 0.857918 1.0443 0.93657 0.886018 1.09429C0.727751 1.24482 0.648405 1.43858 0.648007 1.66122C0.647609 1.88385 0.726262 2.0779 0.883977 2.23618C1.04169 2.39446 1.23546 2.47381 1.45809 2.4742C1.68073 2.4746 1.87477 2.39595 2.02587 2.23822Z" fill="#667479"/>
+                        </svg>
+                        Âge: <span class="main__section1__articles__article__text--span">02 months</span>
+                    </p>
+
+                    <p class="main__section1__articles__article__price">6.900.000 VND</p>
+                </article>
+
+                <article class="main__section1__articles__article">
+                    <img class="main__section1__articles__article__img" src="images/chien2.png" alt="chien disponible à l'adoption">
+                    
+                    <h3 class="main__section1__articles__article__title">MO231 - Pomeranian White</h3>
+
+                    <p class="main__section1__articles__article__text">
+                        Genre: <span class="main__section1__articles__article__text--span">Male</span>
+                        <svg width="10" height="10" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.02587 2.23822C2.18415 2.0805 2.2635 1.88674 2.26389 1.66411C2.26429 1.44147 2.18564 1.24742 2.02791 1.09633C1.87738 0.938059 1.68361 0.858714 1.46098 0.858316C1.23835 0.857918 1.0443 0.93657 0.886018 1.09429C0.727751 1.24482 0.648405 1.43858 0.648007 1.66122C0.647609 1.88385 0.726262 2.0779 0.883977 2.23618C1.04169 2.39446 1.23546 2.47381 1.45809 2.4742C1.68073 2.4746 1.87477 2.39595 2.02587 2.23822Z" fill="#667479"/>
+                        </svg>
+                        Âge: <span class="main__section1__articles__article__text--span">02 months</span>
+                    </p>
+
+                    <p class="main__section1__articles__article__price">6.900.000 VND</p>
+                </article>
+
+                <article class="main__section1__articles__article">
+                    <img class="main__section1__articles__article__img" src="images/chien.png" alt="chien disponible à l'adoption">
+                    
+                    <h3 class="main__section1__articles__article__title">MO231 - Pomeranian White</h3>
+
+                    <p class="main__section1__articles__article__text">
+                        Genre: <span class="main__section1__articles__article__text--span">Male</span>
+                        <svg width="10" height="10" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.02587 2.23822C2.18415 2.0805 2.2635 1.88674 2.26389 1.66411C2.26429 1.44147 2.18564 1.24742 2.02791 1.09633C1.87738 0.938059 1.68361 0.858714 1.46098 0.858316C1.23835 0.857918 1.0443 0.93657 0.886018 1.09429C0.727751 1.24482 0.648405 1.43858 0.648007 1.66122C0.647609 1.88385 0.726262 2.0779 0.883977 2.23618C1.04169 2.39446 1.23546 2.47381 1.45809 2.4742C1.68073 2.4746 1.87477 2.39595 2.02587 2.23822Z" fill="#667479"/>
+                        </svg>
+                        Âge: <span class="main__section1__articles__article__text--span">02 months</span>
+                    </p>
+
+                    <p class="main__section1__articles__article__price">6.900.000 VND</p>
+                </article>
+
+                <article class="main__section1__articles__article">
+                    <img class="main__section1__articles__article__img" src="images/chien2.png" alt="chien disponible à l'adoption">
+                    
+                    <h3 class="main__section1__articles__article__title">MO231 - Pomeranian White</h3>
+
+                    <p class="main__section1__articles__article__text">
+                        Genre: <span class="main__section1__articles__article__text--span">Male</span>
+                        <svg width="10" height="10" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.02587 2.23822C2.18415 2.0805 2.2635 1.88674 2.26389 1.66411C2.26429 1.44147 2.18564 1.24742 2.02791 1.09633C1.87738 0.938059 1.68361 0.858714 1.46098 0.858316C1.23835 0.857918 1.0443 0.93657 0.886018 1.09429C0.727751 1.24482 0.648405 1.43858 0.648007 1.66122C0.647609 1.88385 0.726262 2.0779 0.883977 2.23618C1.04169 2.39446 1.23546 2.47381 1.45809 2.4742C1.68073 2.4746 1.87477 2.39595 2.02587 2.23822Z" fill="#667479"/>
+                        </svg>
+                        Âge: <span class="main__section1__articles__article__text--span">02 months</span>
+                    </p>
+
+                    <p class="main__section1__articles__article__price">6.900.000 VND</p>
+                </article>
+
+                <article class="main__section1__articles__article">
+                    <img class="main__section1__articles__article__img" src="images/chien.png" alt="chien disponible à l'adoption">
+                    
+                    <h3 class="main__section1__articles__article__title">MO231 - Pomeranian White</h3>
+
+                    <p class="main__section1__articles__article__text">
+                        Genre: <span class="main__section1__articles__article__text--span">Male</span>
+                        <svg width="10" height="10" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.02587 2.23822C2.18415 2.0805 2.2635 1.88674 2.26389 1.66411C2.26429 1.44147 2.18564 1.24742 2.02791 1.09633C1.87738 0.938059 1.68361 0.858714 1.46098 0.858316C1.23835 0.857918 1.0443 0.93657 0.886018 1.09429C0.727751 1.24482 0.648405 1.43858 0.648007 1.66122C0.647609 1.88385 0.726262 2.0779 0.883977 2.23618C1.04169 2.39446 1.23546 2.47381 1.45809 2.4742C1.68073 2.4746 1.87477 2.39595 2.02587 2.23822Z" fill="#667479"/>
+                        </svg>
+                        Âge: <span class="main__section1__articles__article__text--span">02 months</span>
+                    </p>
+
+                    <p class="main__section1__articles__article__price">6.900.000 VND</p>
+                </article>
+
+                <article class="main__section1__articles__article">
+                    <img class="main__section1__articles__article__img" src="images/chien2.png" alt="chien disponible à l'adoption">
+                    
+                    <h3 class="main__section1__articles__article__title">MO231 - Pomeranian White</h3>
+
+                    <p class="main__section1__articles__article__text">
+                        Genre: <span class="main__section1__articles__article__text--span">Male</span>
+                        <svg width="10" height="10" viewBox="0 0 3 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.02587 2.23822C2.18415 2.0805 2.2635 1.88674 2.26389 1.66411C2.26429 1.44147 2.18564 1.24742 2.02791 1.09633C1.87738 0.938059 1.68361 0.858714 1.46098 0.858316C1.23835 0.857918 1.0443 0.93657 0.886018 1.09429C0.727751 1.24482 0.648405 1.43858 0.648007 1.66122C0.647609 1.88385 0.726262 2.0779 0.883977 2.23618C1.04169 2.39446 1.23546 2.47381 1.45809 2.4742C1.68073 2.4746 1.87477 2.39595 2.02587 2.23822Z" fill="#667479"/>
+                        </svg>
+                        Âge: <span class="main__section1__articles__article__text--span">02 months</span>
+                    </p>
+
+                    <p class="main__section1__articles__article__price">6.900.000 VND</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="main__section2">
+
+            <div class="main__section2__text-block">
+                <h2 class="main__section2__text-block__title">One More Friend</h2>
+
+                <h3 class="main__section2__text-block__subtitle">Thousands More Fun!</h3>
+
+                <p class="main__section2__text-block__text">Having a pet means you have more joy, a new friend, a happy person who will always be with you to have fun. We have 200+ different pets that can meet your needs!</p>
+            
+                <div class="main__section2__button">
+                    <button class="main__section2__button--intro">View Intro
+                        <svg class="main__section2__button--intro--svg"  width="25" height="25" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.86651 4.35738L4.8601 7.94824L7.85569 6.15816L4.86651 4.35738Z" fill="#003459" stroke="#003459" stroke-width="0.897717" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <button class="main__section2__button--explore">Explore Now</button>
+                </div>
+            </div>
+
+            <img class="main__section2__img" src="images/section2-image.png" alt="//">
+        </section>
+
+
+        <section class="main__section0">
+            <div class="main__section0__header">
+                <p class="main__section0__header__text1">You already know ?</p>
+                <h3 class="main__section0__header__text2">Useful pet knowledge</h3>
+
+                <button class="main__section0__header__button">View more
+                    <svg class="main__section0__header__button--svg" width="10" height="15" viewBox="0 0 4 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.27637 0.642578L3.26773 2.64107L1.26924 4.63242" stroke="#003459" stroke-width="0.897717" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+
+        <section class="main__section3">
+            <article class="main__section3__article">
+                <img class="main__section3__article__img" src="images/chien3.png" alt="//">
+
+                <span class="main__section3__article__span">Pet knowledge</span>
+
+                <h3 class="main__section3__article__title">What is a Pomeranian? How to Identify Pomeranian Dogs</h3>
+
+                <p class="main__section3__article__subtitle">Pet knowledge What is a Pomeranian? How to Identify Pomeranian Dogs
+                The Pomeranian, also known as the Pomeranian (Pom dog), is always in the top of the cutest pets.
+                Not only that, the small, lovely, smart, friendly, and skillful circus dog breed.</p>
+            </article>
+            
+            <article class="main__section3__article">
+                <img class="main__section3__article__img" src="images/chien3.png" alt="//">
+
+                <span class="main__section3__article__span">Pet knowledge</span>
+
+                <h3 class="main__section3__article__title">What is a Pomeranian? How to Identify Pomeranian Dogs</h3>
+
+                <p class="main__section3__article__subtitle">Pet knowledge What is a Pomeranian? How to Identify Pomeranian Dogs
+                The Pomeranian, also known as the Pomeranian (Pom dog), is always in the top of the cutest pets.
+                Not only that, the small, lovely, smart, friendly, and skillful circus dog breed.</p>
+            </article>
+            
+            <article class="main__section3__article">
+                <img class="main__section3__article__img" src="images/chien3.png" alt="//">
+
+                <span class="main__section3__article__span">Pet knowledge</span>
+
+                <h3 class="main__section3__article__title">What is a Pomeranian? How to Identify Pomeranian Dogs</h3>
+
+                <p class="main__section3__article__subtitle">Pet knowledge What is a Pomeranian? How to Identify Pomeranian Dogs
+                The Pomeranian, also known as the Pomeranian (Pom dog), is always in the top of the cutest pets.
+                Not only that, the small, lovely, smart, friendly, and skillful circus dog breed.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <section class="footer__section1">
+            <h2 class="footer__section1__title">Register now so you don't miss our programs</h2>
+
+            <div class="footer__section1__searchbar">
+                <input type="text" class="footer__section1__searchbar__input" placeholder="Enter your Email">
+
+                <button class="footer__section1__searchbar__button">Subscribe Now</button>
+            </div>
+        </section>
+
+        <section class="footer__section2">
+            <ul class="footer__section2__list">
+                <li class="footer__section2__list__item"><a class="footer__section2__list__item__link" href="#">Home</a></li>
+                <li class="footer__section2__list__item"><a class="footer__section2__list__item__link" href="#">Category</a></li>
+                <li class="footer__section2__list__item"><a class="footer__section2__list__item__link" href="#">About</a></li>
+                <li class="footer__section2__list__item"><a class="footer__section2__list__item__link" href="#">Contact</a></li>
+            </ul>
+            <ul class="footer__section2__list2">
+                <li class="footer__section2__list2__item"><a href="#" class="footer__section2__list2__item__link">
+                    <svg width="25" height="21" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.1656 7.60124C15.1524 3.6349 11.9264 0.430236 7.96001 0.443418C3.99367 0.456599 0.789006 3.68264 0.802188 7.64898C0.814101 11.2335 3.4502 14.1959 6.88532 14.7233L6.86864 9.7048L5.04516 9.71086L5.03826 7.6349L6.86174 7.62884L6.85648 6.04662C6.8505 4.24671 7.9194 3.24893 9.55983 3.24348C10.3453 3.24087 11.1679 3.37841 11.1679 3.37841L11.1738 5.14577L10.2682 5.14878C9.37611 5.15175 9.09966 5.70631 9.10154 6.27481L9.10602 7.62138L11.0978 7.61476L10.7863 9.69178L9.11292 9.69734L9.1296 14.7158C12.5611 14.1656 15.1775 11.1858 15.1656 7.60124Z" fill="#00171F"/>
+                    </svg>
+                </a></li>
+
+                <li class="footer__section2__list2__item"><a href="#" class="footer__section2__list2__item__link">
+                    <svg width="25" height="21" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_53_1881)">
+                            <path d="M4.6433 13.3417C10.0621 13.3237 13.0119 8.82332 12.9989 4.93033C12.9985 4.80409 12.9953 4.67506 12.9893 4.54883C13.5646 4.12984 14.0606 3.61158 14.4539 3.0184C13.9176 3.25916 13.3478 3.41712 12.7641 3.4869C13.3777 3.1163 13.8362 2.53579 14.0545 1.85297C13.4772 2.19769 12.8454 2.44161 12.1862 2.57427C11.7403 2.10352 11.1516 1.7928 10.5113 1.69016C9.871 1.58751 9.21472 1.69866 8.64393 2.00641C8.07313 2.31415 7.61961 2.80137 7.35349 3.39272C7.08736 3.98407 7.02345 4.64661 7.17164 5.27793C6.00021 5.22305 4.85338 4.9226 3.80552 4.39606C2.75765 3.86953 1.83213 3.12866 1.08896 2.22148C0.71493 2.87132 0.602368 3.63918 0.774148 4.36903C0.945929 5.09887 1.38916 5.73592 2.01376 6.15071C1.54584 6.13741 1.0878 6.01296 0.677477 5.78765L0.677598 5.82412C0.679441 6.50476 0.916938 7.16375 1.34972 7.68909C1.7825 8.21442 2.38385 8.57367 3.05155 8.70577C2.61853 8.82579 2.1637 8.84458 1.72226 8.76068C1.91249 9.34541 2.28053 9.85616 2.77501 10.2216C3.2695 10.5871 3.86575 10.7891 4.48055 10.7994C3.43959 11.6227 2.1518 12.0717 0.824611 12.074C0.589245 12.0744 0.354063 12.0608 0.120325 12.0332C1.47148 12.8937 3.04141 13.3479 4.6433 13.3417Z" fill="#00171F"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_53_1881">
+                                <rect width="14.3635" height="14.3635" fill="white" transform="translate(0.0810547 0.339844) rotate(-0.190416)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </a></li>
+
+                <li class="footer__section2__list2__item"><a href="#" class="footer__section2__list2__item__link">
+                    <svg width="25" height="21" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_53_1882)">
+                            <path d="M7.5688 1.48229C9.48766 1.47591 9.71492 1.48357 10.4697 1.51473C11.1711 1.54326 11.5502 1.65982 11.803 1.75717C12.1373 1.88511 12.3791 2.04141 12.6296 2.29025C12.8829 2.54189 13.038 2.77984 13.1682 3.11324C13.2672 3.3654 13.3863 3.74653 13.4195 4.44496C13.4556 5.2023 13.4648 5.4295 13.4712 7.34555C13.4775 9.26441 13.4699 9.49167 13.4387 10.2464C13.4102 10.9479 13.2936 11.327 13.1963 11.5798C13.0684 11.9141 12.9121 12.1558 12.6632 12.4063C12.4116 12.6597 12.1736 12.8147 11.8402 12.9449C11.5881 13.0439 11.2069 13.163 10.5085 13.1962C9.75116 13.2324 9.52396 13.2416 7.60791 13.2479C5.68905 13.2543 5.46179 13.2466 4.70703 13.2155C4.0056 13.187 3.62648 13.0704 3.37367 12.973C3.03941 12.8451 2.79763 12.6888 2.54712 12.44C2.2938 12.1883 2.13871 11.9504 2.00856 11.617C1.90953 11.3648 1.79044 10.9837 1.75726 10.2852C1.72108 9.52791 1.71191 9.30071 1.70554 7.38466C1.69916 5.4658 1.70682 5.23854 1.73798 4.48379C1.76651 3.78235 1.88307 3.40323 1.98042 3.15042C2.10836 2.81616 2.26465 2.57438 2.5135 2.32387C2.76514 2.07055 3.00308 1.91546 3.33649 1.78531C3.58865 1.68628 3.96978 1.56719 4.66821 1.53401C5.42274 1.49784 5.64994 1.48867 7.5688 1.48229ZM7.56451 0.189023C5.61479 0.195503 5.37075 0.20473 4.605 0.240939C3.84206 0.277139 3.31787 0.402318 2.86399 0.580566C2.3905 0.767294 1.99015 1.01269 1.59312 1.41518C1.19328 1.81487 0.950548 2.21685 0.766962 2.68876C0.591744 3.14662 0.470043 3.66883 0.438915 4.432C0.407805 5.20077 0.4002 5.44487 0.40668 7.39458C0.41316 9.3443 0.422387 9.58834 0.458596 10.3541C0.494797 11.117 0.619975 11.6412 0.798223 12.0951C0.984951 12.5686 1.23035 12.9689 1.63284 13.366C2.03252 13.763 2.43451 14.0085 2.90641 14.1893C3.36427 14.3645 3.88648 14.4862 4.64964 14.5174C5.41562 14.5485 5.65971 14.5561 7.60943 14.5496C9.55914 14.5431 9.80318 14.5339 10.5689 14.4977C11.3319 14.4615 11.8561 14.3363 12.3099 14.1581C12.7806 13.9742 13.181 13.726 13.578 13.3263C13.975 12.9266 14.2206 12.5246 14.4014 12.0527C14.5766 11.5948 14.6983 11.0726 14.7294 10.3095C14.7605 9.54349 14.7681 9.2994 14.7617 7.34968C14.7552 5.39996 14.746 5.15593 14.7097 4.39018C14.6735 3.62724 14.5484 3.10305 14.3701 2.64917C14.1918 2.17284 13.9464 1.77249 13.5439 1.37546C13.1442 0.978429 12.7422 0.732891 12.2703 0.55211C11.8125 0.376893 11.2903 0.255191 10.5271 0.224063C9.75832 0.190148 9.51422 0.182543 7.56451 0.189023Z" fill="#00171F"/>
+                            <path d="M7.57575 3.68159C5.53907 3.68836 3.89221 5.3462 3.89898 7.38288C3.90575 9.41956 5.56359 11.0664 7.60027 11.0597C9.63696 11.0529 11.2838 9.39504 11.277 7.35836C11.2703 5.32168 9.61244 3.67482 7.57575 3.68159ZM7.59597 9.76358C6.27465 9.76797 5.19944 8.69989 5.19505 7.37857C5.19066 6.05725 6.25874 4.98205 7.58006 4.97766C8.90138 4.97327 9.97658 6.04135 9.98097 7.36267C9.98537 8.68399 8.91728 9.75919 7.59597 9.76358Z" fill="#00171F"/>
+                            <path d="M12.2722 3.52007C12.2738 3.99698 11.8879 4.3826 11.4138 4.38417C10.9369 4.38576 10.5513 3.9999 10.5497 3.52579C10.5482 3.04888 10.934 2.66326 11.4081 2.66169C11.8822 2.66011 12.2706 3.04596 12.2722 3.52007Z" fill="#00171F"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_53_1882">
+                                <rect width="14.3635" height="14.3635" transform="translate(0.382812 0.212891) rotate(-0.190416)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                </a></li>
+                <li class="footer__section2__list2__item"><a href="#" class="footer__section2__list2__item__link">
+                    <svg width="25" height="21" viewBox="0 0 16 11" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14.9199 2.34734C14.9199 2.34734 14.7764 1.35752 14.3429 0.924125C13.794 0.353652 13.1824 0.352879 12.9017 0.320147C10.8926 0.180944 7.87688 0.190967 7.87688 0.190967L7.87127 0.190985C7.87127 0.190985 4.85552 0.201008 2.84738 0.353561C2.56695 0.388158 1.9554 0.392996 1.41025 0.967105C0.979676 1.40337 0.845505 2.39411 0.845505 2.39411C0.845505 2.39411 0.703496 3.55882 0.707356 4.72023L0.710973 5.80871C0.714833 6.97012 0.861775 8.13387 0.861775 8.13387C0.861775 8.13387 1.00533 9.12369 1.436 9.55709C1.98494 10.1276 2.70305 10.1055 3.02306 10.1662C4.17362 10.2718 7.90765 10.293 7.90765 10.293C7.90765 10.293 10.9262 10.2774 12.9343 10.1276C13.2148 10.093 13.8263 10.0882 14.3715 9.5141C14.802 9.07784 14.939 8.08708 14.939 8.08708C14.939 8.08708 15.0782 6.92519 15.0744 5.76097L15.0707 4.6725C15.0669 3.51108 14.9199 2.34734 14.9199 2.34734ZM6.41303 7.11109L6.39961 3.0742L10.2861 5.08676L6.41303 7.11109Z" fill="#00171F"/>
+                    </svg>
+                </a></li>
+            </ul>
+        </section>
+
+        <section class="footer__section3">
+            <p class="footer__section3__text">© 2022 Monito. All rights reserved.</p>
+
+            <svg width="130" height="50" class="footer__section3__logo" viewBox="0 0 70 25" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_53_1842)">
+                    <path d="M20.4582 20.121C20.8425 20.1197 21.1611 20.2488 21.4171 20.5051C21.6794 20.7613 21.8065 21.0815 21.8078 21.4624C21.809 21.8433 21.6841 22.158 21.4235 22.4224C21.1692 22.6803 20.8515 22.8115 20.4672 22.8128L19.6387 22.8155L19.6433 24.2186L18.9755 24.2208L18.9619 20.1292L20.4582 20.1242L20.4582 20.121ZM20.465 22.1779C20.8588 22.1766 21.1413 21.8773 21.1399 21.4615C21.1386 21.0456 20.8541 20.7482 20.4603 20.7495L19.6318 20.7523L19.6366 22.1775L20.465 22.1748L20.465 22.1779Z" fill="#103559"/>
+                    <path d="M22.8179 23.0366C22.9159 23.4463 23.293 23.6706 23.8025 23.6689C24.1522 23.6677 24.4149 23.5526 24.594 23.3324L25.1411 23.6117C24.8426 24.0051 24.3937 24.2029 23.8009 24.2048C23.3047 24.2065 22.898 24.0731 22.5907 23.8106C22.2834 23.5421 22.1291 23.2029 22.1278 22.7929C22.1264 22.3829 22.2785 22.0544 22.5773 21.784C22.8761 21.5077 23.2687 21.3717 23.7416 21.3701C24.1878 21.3686 24.5579 21.508 24.8453 21.7823C25.1359 22.0566 25.2836 22.3959 25.2849 22.7883C25.2851 22.8469 25.2787 22.9289 25.2624 23.0314L22.8213 23.0396L22.8179 23.0366ZM24.6147 22.5562C24.52 22.1202 24.1696 21.8929 23.7366 21.8943C23.2471 21.896 22.9049 22.1519 22.813 22.5622L24.6147 22.5562Z" fill="#103559"/>
+                    <path d="M27.1763 21.8429L26.4517 21.8453L26.4564 23.2523C26.4576 23.6279 26.7023 23.6207 27.1822 23.5969L27.1841 24.1667C26.2183 24.2876 25.8265 24.0247 25.8239 23.2576L25.8192 21.8506L25.2821 21.8524L25.2801 21.2412L25.8172 21.2394L25.8151 20.6059L26.4469 20.416L26.4497 21.2373L27.1743 21.2349L27.1764 21.8461L27.1763 21.8429Z" fill="#103559"/>
+                    <path d="M28.7358 22.5171C29.163 22.6066 29.7168 22.7777 29.7067 23.3553C29.7075 23.6133 29.603 23.8189 29.399 23.9661C29.1951 24.1134 28.9398 24.1875 28.6301 24.1885C28.0829 24.1904 27.6762 23.9542 27.4976 23.562L28.0107 23.2701C28.1048 23.5277 28.3096 23.659 28.6253 23.6579C28.941 23.6569 29.097 23.5538 29.0963 23.3544C29.0958 23.1814 28.8639 23.0796 28.5691 23.0102C28.1538 22.909 27.5941 22.7496 27.6042 22.1808C27.6034 21.9316 27.6959 21.732 27.8908 21.5818C28.0828 21.4287 28.329 21.3546 28.6147 21.3537C29.0747 21.3522 29.4452 21.562 29.6417 21.9131L29.1376 22.1904C29.0437 21.9855 28.866 21.8835 28.6164 21.8843C28.3909 21.8851 28.2139 21.9824 28.2145 22.1729C28.2151 22.3518 28.4469 22.4419 28.7358 22.523L28.7358 22.5171Z" fill="#103559"/>
+                    <path d="M33.4861 20.6798C32.9886 20.641 32.7473 20.8318 32.7487 21.2493L32.7489 21.3054L33.4882 21.3029L33.4902 21.9012L32.7509 21.9036L32.7584 24.175L32.0804 24.1772L32.0729 21.9059L31.5959 21.9075L31.5939 21.3092L32.0709 21.3077L32.0707 21.2516C32.0681 20.4664 32.5573 20.0348 33.4841 20.0816L33.4861 20.6798Z" fill="#103559"/>
+                    <path d="M34.274 23.7598C33.9677 23.4855 33.8107 23.1522 33.8094 22.7539C33.8081 22.3556 33.9629 22.0212 34.2673 21.7449C34.5717 21.4686 34.948 21.3326 35.3832 21.3312C35.8185 21.3297 36.1957 21.4632 36.5019 21.7375C36.8081 22.0117 36.9652 22.3451 36.9665 22.7434C36.9678 23.1417 36.813 23.476 36.5086 23.7523C36.2042 24.0286 35.8344 24.1646 35.3927 24.1661C34.9509 24.1675 34.5802 24.034 34.274 23.7598ZM35.3908 23.6008C35.6539 23.6 35.8745 23.5172 36.0526 23.3556C36.2307 23.1939 36.3209 22.9886 36.3201 22.7455C36.3193 22.5024 36.2277 22.2977 36.0485 22.1373C35.8693 21.9768 35.6482 21.8955 35.3851 21.8964C35.122 21.8973 34.9014 21.98 34.7233 22.1417C34.5452 22.3033 34.4549 22.5086 34.4558 22.7517C34.4566 22.9948 34.5482 23.1995 34.7274 23.36C34.9065 23.5204 35.1277 23.6017 35.3908 23.6008Z" fill="#103559"/>
+                    <path d="M37.9294 21.8404C38.0917 21.4949 38.4049 21.3214 38.8559 21.3199L38.8581 21.9704C38.6129 21.9531 38.3941 22.0113 38.2082 22.139C38.0224 22.2637 37.9315 22.4697 37.9325 22.7541L37.9371 24.1579L37.2868 24.1601L37.2775 21.3736L37.9279 21.3714L37.9294 21.8404Z" fill="#103559"/>
+                    <path d="M43.5972 22.9701C43.5983 23.3036 43.4873 23.5835 43.2611 23.8067C43.0349 24.0298 42.7599 24.1419 42.4331 24.143L40.7597 24.1485L40.7461 20.0537L42.2954 20.0486C42.6131 20.0475 42.8858 20.1578 43.1044 20.3731C43.329 20.5884 43.4389 20.858 43.4399 21.1789C43.4411 21.5347 43.3089 21.8115 43.0463 22.0157C43.3859 22.202 43.5927 22.5412 43.5942 22.9669L43.5972 22.9701ZM41.3897 20.6838L41.3933 21.7607L42.3011 21.7577C42.5855 21.7567 42.8026 21.5209 42.8016 21.2191C42.8006 20.9173 42.5819 20.683 42.2975 20.6839L41.3897 20.6869L41.3897 20.6838ZM42.431 23.5108C42.7275 23.5098 42.9597 23.2581 42.9586 22.9372C42.9575 22.6164 42.7237 22.3662 42.4272 22.3672L41.3953 22.3706L41.3991 23.5174L42.431 23.514L42.431 23.5108Z" fill="#103559"/>
+                    <path d="M44.9168 22.9629C45.0147 23.3726 45.3913 23.5968 45.9003 23.5952C46.2496 23.594 46.5121 23.4789 46.691 23.2587L47.2375 23.538C46.9394 23.9314 46.4909 24.1291 45.8988 24.1311C45.4031 24.1327 44.9968 23.9994 44.6898 23.7368C44.3829 23.4684 44.2287 23.1292 44.2274 22.7192C44.226 22.3092 44.3779 21.9807 44.6765 21.7103C44.975 21.434 45.3671 21.298 45.8395 21.2964C46.2852 21.2949 46.655 21.4342 46.9453 21.7086C47.2357 21.9829 47.3832 22.3221 47.3845 22.7146C47.3847 22.7731 47.3783 22.8552 47.362 22.9577L44.9235 22.9658L44.9168 22.9629ZM46.7117 22.4825C46.6171 22.0465 46.267 21.8192 45.8345 21.8206C45.3455 21.8223 45.0037 22.0782 44.9119 22.4885L46.715 22.4825L46.7117 22.4825Z" fill="#103559"/>
+                    <path d="M48.6254 22.4512C49.0527 22.5407 49.6064 22.7118 49.5963 23.2894C49.5972 23.5474 49.4926 23.7529 49.2887 23.9002C49.0847 24.0475 48.8294 24.1216 48.5197 24.1226C47.9726 24.1244 47.5659 23.8883 47.3872 23.4961L47.9004 23.2041C47.9944 23.4618 48.1993 23.5931 48.515 23.592C48.8307 23.591 48.9867 23.4878 48.986 23.2885C48.9854 23.1155 48.7536 23.0137 48.4587 22.9443C48.0435 22.8431 47.4837 22.6837 47.4939 22.1149C47.493 21.8657 47.5856 21.6661 47.7805 21.5159C47.9724 21.3628 48.2187 21.2887 48.5043 21.2878C48.9643 21.2862 49.3348 21.4961 49.5314 21.8472L49.0272 22.1245C48.9333 21.9196 48.7556 21.8176 48.5061 21.8184C48.2806 21.8191 48.1035 21.9165 48.1042 22.107C48.1048 22.2859 48.3366 22.376 48.6254 22.4571L48.6254 22.4512Z" fill="#103559"/>
+                    <path d="M51.8013 21.7609L51.0779 21.7633L51.0826 23.1703C51.0838 23.5459 51.3281 23.5387 51.8072 23.5148L51.8091 24.0846C50.8449 24.2056 50.4537 23.9427 50.4512 23.1755L50.4465 21.7686L49.9071 21.7703L49.9051 21.1592L50.4445 21.1574L50.4424 20.5239L51.0732 20.334L51.0759 21.1553L51.7993 21.1529L51.8014 21.7641L51.8013 21.7609Z" fill="#103559"/>
+                    <path d="M15.8626 2.53074C15.7772 1.71633 15.4494 1.55322 14.8138 1.55534L12.1063 1.56433C11.512 1.56631 11.3693 1.66783 11.1459 2.32222L9.13718 8.93164L7.08459 2.33571C6.85679 1.68283 6.71345 1.58226 6.11919 1.58423L3.40848 1.59324C2.77291 1.59535 2.44613 1.76064 2.36622 2.57559L0.972905 15.5426C0.914079 16.0101 0.956011 16.1963 1.36615 16.2549L4.46605 16.693C4.93657 16.7514 5.04111 16.65 5.10033 16.3025L5.75704 10.2281L7.23139 15.9102C7.37595 16.377 7.56089 16.5627 8.03439 16.5611L10.2907 16.5536C10.761 16.5521 10.9479 16.3683 11.0893 15.8973L12.5068 10.2056L13.2229 16.2755C13.2845 16.6226 13.3897 16.7233 13.8598 16.6618L16.9567 16.2031C17.3665 16.1417 17.4072 15.9585 17.3452 15.4882L15.8626 2.53074Z" fill="#103559"/>
+                    <path d="M23.3309 4.99193C19.8537 5.00349 17.9718 7.39311 17.9827 10.6795C17.9936 13.9659 19.8914 16.343 23.3686 16.3314C26.8459 16.3199 28.7277 13.9303 28.7168 10.6438C28.7059 7.35744 26.8082 4.98037 23.3309 4.99193ZM23.3563 12.623C22.5216 12.6258 22.0718 11.8452 22.0678 10.6628C22.0639 9.48048 22.5086 8.69696 23.3432 8.69418C24.1779 8.69141 24.6277 9.47196 24.6317 10.6543C24.6356 11.8367 24.1909 12.6202 23.3563 12.623Z" fill="#103559"/>
+                    <path d="M36.4961 4.95479C35.7833 4.95716 30.4503 5.11651 30.105 5.60549C29.9636 5.76961 29.9643 5.99307 29.9656 6.37703L30.1591 15.2328C30.1807 16.0448 30.3676 16.3085 31.0773 16.3061L33.5627 16.2979C34.2755 16.2955 34.4765 16.0305 34.4738 15.2185L34.4535 9.10339C34.7591 9.00167 34.8599 8.96042 35.2067 8.93723C35.6735 8.9168 35.8979 9.05768 36.0442 9.44116C36.1465 9.84682 36.1706 10.4573 36.1734 11.2882L36.1675 15.2097C36.1702 16.0217 36.395 16.2853 37.1078 16.283L39.6531 16.2745C40.366 16.2721 40.548 16.0071 40.5642 15.1951L40.7103 9.79074C40.7248 8.46883 40.4369 7.25179 39.7621 6.36021C39.0463 5.46876 37.9848 4.94355 36.4993 4.94849L36.4961 4.95479Z" fill="#103559"/>
+                    <path d="M46.0535 6.17649L43.4951 6.18499C42.7951 6.18732 42.5946 6.4294 42.5973 7.2414L42.6237 15.1953C42.6264 16.0042 42.8286 16.2669 43.5286 16.2646L46.1273 16.2559C46.8273 16.2536 47.0463 15.9895 47.0436 15.1806L46.9769 7.22685C46.9743 6.43679 46.7535 6.17416 46.0535 6.17649Z" fill="#103559"/>
+                    <path d="M44.944 0.825139C43.4287 0.830174 42.5793 1.76609 42.5835 3.03791C42.5877 4.30974 43.4434 5.23999 44.9586 5.23495C46.4739 5.22991 47.3234 4.294 47.3191 3.02217C47.3149 1.75035 46.4593 0.820103 44.944 0.825139Z" fill="#103559"/>
+                    <path d="M55.9452 5.21354L54.3715 5.21877L54.3624 2.48037C54.3597 1.66923 54.1505 1.42469 53.4294 1.42709L50.987 1.4352C50.2626 1.43761 50.036 1.70246 50.0386 2.49474L50.0477 5.23314L48.8073 5.23726C48.1246 5.23953 47.9583 5.3627 47.9604 5.99149L47.9678 8.20485C47.9699 8.83364 48.1369 8.9557 48.8196 8.95343L50.06 8.94931L50.0728 12.8038C50.0815 15.4007 51.47 16.5531 54.079 16.5444C54.845 16.5419 55.6108 16.4796 56.3347 16.3326C56.6454 16.2718 56.7285 16.1898 56.7275 15.8848L56.6146 12.7789C56.6137 12.5148 56.4691 12.4147 56.2001 12.4753C55.9727 12.5358 55.7453 12.5775 55.4344 12.5785C54.835 12.5805 54.3985 12.3776 54.3956 11.5067L54.387 8.92864L55.9607 8.92341C56.6434 8.92115 56.8097 8.79798 56.8076 8.16918L56.8003 5.95583C56.7982 5.32703 56.6311 5.20497 55.9484 5.20724L55.9452 5.21354Z" fill="#103559"/>
+                    <path d="M62.7948 4.86107C59.3175 4.87263 57.4357 7.26225 57.4466 10.5487C57.4575 13.8351 59.3552 16.2121 62.8325 16.2006C66.3097 16.189 68.1916 13.7994 68.1807 10.513C68.1698 7.22658 66.272 4.84951 62.7948 4.86107ZM62.8201 12.4921C61.9855 12.4949 61.5356 11.7143 61.5317 10.532C61.5278 9.34962 61.9724 8.5661 62.8071 8.56332C63.6418 8.56055 64.0916 9.3411 64.0955 10.5235C64.0995 11.7058 63.6548 12.4893 62.8201 12.4921Z" fill="#103559"/>
+                    <path d="M69.1612 5.28384C68.7956 5.02187 68.1986 5.17592 67.8227 5.6275C67.4468 6.07909 67.4393 6.65812 67.8018 6.9201C68.1675 7.18206 68.7645 7.02802 69.1404 6.57643C69.5162 6.12485 69.5238 5.54582 69.1612 5.28384Z" fill="#103559"/>
+                    <path d="M60.5743 4.54681C61.0029 4.47954 61.282 3.93614 61.1972 3.33123C61.1124 2.72632 60.6999 2.2887 60.2713 2.35597C59.8427 2.42324 59.5636 2.96665 59.6484 3.57155C59.7332 4.17646 60.1457 4.61409 60.5743 4.54681Z" fill="#103559"/>
+                    <path d="M66.1321 5.08483C66.7263 5.38233 67.6225 4.81296 68.1305 3.81194C68.6384 2.81092 68.5694 1.75649 67.9719 1.459C67.3776 1.1615 66.4815 1.73088 65.9735 2.73189C65.4655 3.73291 65.5346 4.78734 66.1321 5.08483Z" fill="#103559"/>
+                    <path d="M63.0573 4.22488C63.6554 4.29898 64.233 3.51396 64.3449 2.47368C64.4569 1.43023 64.0632 0.52796 63.4621 0.453867C62.864 0.379764 62.2864 1.16478 62.1745 2.20506C62.0625 3.24851 62.4562 4.15078 63.0573 4.22488Z" fill="#103559"/>
+                </g>
+                <defs>
+                    <clipPath id="clip0_53_1842">
+                        <rect width="68.8249" height="23.9391" fill="white" transform="translate(0.901367 0.656738) rotate(-0.190416)"/>
+                    </clipPath>
+                </defs>
+            </svg>
+
+            <div class="footer__section3__container">
+                <p class="footer__section3__container__text1">Terms of service</p>
+                <p class="footer__section3__container__text2">Privacy policy</p>
+            </div>
+        </section>
+
+    </footer>
+
+
+    <script>
+        navList = document.querySelector(".header__nav__responsive__container")
+        document.querySelector(".header__nav__burger").addEventListener("click", () => {
+            if (!navList.id) {
+                navList.id = "navResponsive";
+            } else {
+                navList.id = ""
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+

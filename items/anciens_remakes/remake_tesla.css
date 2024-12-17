@@ -1,0 +1,519 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 2;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style-type: none;
+}   
+body::-webkit-scrollbar {
+    width: 0; /* to "erase" the scrollbar */
+}
+
+
+nav{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-weight: 1000;
+    color: #171A20;
+    position: fixed;
+}
+
+
+#logo_tesla_id{
+    height: 20px;
+    margin: 10px 30px;
+}
+
+.ul_nav{
+    display: flex;
+    list-style-type: none;
+}
+#ul_one{
+    position: relative;
+    left: 18%;
+}
+#ul_two{
+    right: 10px;
+    position: absolute;
+}
+
+
+.a_nav{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 3px 12px;
+    transition: 0.7s;
+}.a_nav:hover{background-color: rgb(224, 223, 223); border-radius: 10px; opacity: 0.9}
+
+
+
+    /* nav menu elements */
+
+.nav_menu_class {
+    position: absolute;
+    overflow: auto;
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    border-left: 1px solid #171A20;
+    right: 0;
+    z-index: 3;
+}
+
+.fond_noir_class {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(87, 83, 77, 0.7);
+    position: fixed;
+}
+
+#nav_menu_cross {
+    position: absolute;
+    display: none;
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    z-index: 4;
+    transition: 0.2s;
+} #nav_menu_cross:hover {background-color: rgba(240, 240, 230, 0.7); border-radius: 7px}
+
+#nav_menu_back {
+    position: absolute;
+    display: none;
+    top: 20px;
+    right: 220px;
+    z-index: 4;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+} #nav_menu_back:hover {background-color: rgba(221, 221, 221, 0.5); border-radius: 5px;}
+
+#nav_menu_arrow-left {
+    width: 25px;
+    color :rgb(80, 80, 80)
+}
+#nav_menu_back p {
+    color :rgb(80, 80, 80);
+}
+
+
+#nav_menu_list {
+    overflow-y: auto;
+    position: absolute;
+    width: 300px;
+    height: 90vh;
+    top: 50px;
+    right: 0;
+    z-index: 4;
+    display: none;
+}
+
+#nav_menu_list_li {
+    position: absolute;
+    right: 0;
+    width: 90%;
+}
+
+#nav_menu_list_li a {
+    color: black;
+    padding: 5px 20px;
+    transition: 0.4s;
+} #nav_menu_list_li a:hover {background-color: rgba(235, 235, 235, 0.8); border-radius: 5px}
+
+#nav_menu_list_li li {
+    margin-top: 30px;
+}
+
+
+#nav_menu_list_globe {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: auto 0;
+}
+
+
+#nav_menu_list_position {
+    display: flex;
+    position: absolute;
+    bottom: -30%;
+    right: 20%;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+} #nav_menu_list_position:hover {background-color: rgb(230, 224, 224); cursor: pointer;}
+#nav_menu_list_position div p:hover {text-decoration: underline;}
+
+
+
+#nav_menu_list_li_position {
+    position: absolute;
+    display: none;
+    right: 0;
+    width: 90%;
+}
+
+.nav_menu_list_li_continents {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 30px 0 15px 0;
+}
+
+
+.nav_menu_list_li_div {
+    padding: 5px;
+    border-radius: 20px;
+    font-size: 90%;
+    width: 95%;
+} .nav_menu_list_li_div:hover {background-color: rgb(234, 234, 234); opacity: 0.8;}
+
+.nav_menu_list_li_div div div {
+    display: flex;
+}
+.nav_menu_list_li_div div h4 {
+    margin: 5px 10px;
+}
+.nav_menu_list_li_div div div p {
+    margin: 5px 10px;
+    color: rgb(160, 160, 160);
+    cursor: pointer;
+} .nav_menu_list_li_div div div p:hover {text-decoration: underline;}
+
+    /* fin nav menu elements */
+
+
+
+
+
+
+
+
+
+
+     /* MODELS */
+
+
+
+
+     /* début des généralités des models */
+
+.tesla_all_model {
+    position: relative;
+    object-fit: cover;  
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+
+.all_model_perf {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    padding: 5px;
+    cursor: pointer;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-bottom: 10px solid rgb(83, 138, 221);
+    transition: 0.2s ease-in-out;
+} .all_model_perf:hover {border-bottom: 10px solid rgb(51, 116, 212); color: #01060e;}
+
+.all_model_perf_text_line1_class {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    font-weight: 100;
+}
+
+
+.all_model_perf_text_line2_class {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    font-weight: 100;
+}
+
+
+
+.all_model_h1{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    font-size: 50px;
+    transform: translate(-50%, -50%);
+}
+.all_model_p{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.all_model_ul{
+    position: absolute;
+    top: 86%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    list-style-type: none;
+}
+
+.models_h1{
+    font-size: 4vw;
+    font-weight: 600;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.models_p{
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+
+
+.models_a1{
+    background-color: rgba(50, 50, 50, 0.9);
+    color: rgb(241, 231, 231);
+    text-align: center;
+    padding: 10px 70px;
+    margin: 20px;
+    border-radius: 5px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: 0.5s;
+}.models_a1:hover{background-color: rgb(70, 66, 66);}
+.models_a1 a {
+    color: rgb(241, 231, 231);
+}
+
+.models_a2{
+    background-color: white;
+    color: rgba(000, 000, 000, 0.9);
+    text-align: center;
+    padding: 10px 70px;
+    margin: 20px;
+    border-radius: 5px;
+    font-weight: 200;
+    cursor: pointer;
+    transition: 0.5s;
+}.models_a2:hover{background-color: rgb(231, 222, 222);}
+.models_a1 a {
+    color: rgb(000, 000, 000);
+}
+
+
+#span1{
+    cursor: pointer;
+}#span1:hover {text-decoration: underline;}
+
+    /* fin des généralités des models */
+
+
+
+
+
+/* model 3 */
+
+#model3_container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+
+.model3_perf_list_class{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    height: 170px;
+    width: 300px;
+    background: linear-gradient(to right, rgb(219, 219, 219), rgb(235, 235, 235), white);
+    opacity: 0.95;
+    border-radius: 20px;
+    border: 2px solid rgb(206, 125, 125);
+}
+
+#first_page_scroll_svg {
+    position: absolute;
+    width: 35px;
+    bottom: 0;
+    right: 50%;
+    transform: translateY(-50%);
+    transition: 0.2s;
+} #first_page_scroll_svg:hover {color: rgb(100, 140, 100)}
+
+
+
+/* model Y */
+
+#modely_container {
+    position: absolute;
+    object-fit: cover;  
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    z-index: 1;
+}
+
+
+.modely_perf_list_class{
+    position: absolute;
+    top: 120%;
+    left: 5%;
+    height: 170px;
+    width: 300px;
+    background: linear-gradient(to right, rgb(219, 219, 219), rgb(235, 235, 235), white);
+    opacity: 0.95;
+    border-radius: 20px;
+    border: 2px solid rgb(206, 125, 125);
+}
+
+
+
+/* model S */
+
+#models_container {
+    position: absolute;
+    object-fit: cover;  
+    width: 100%;
+    height: 100%;
+    top: 200%;
+    z-index: 1;
+}
+
+
+.models_perf_list_class{
+    position: absolute;
+    top: 220%;
+    left: 5%;
+    height: 170px;
+    width: 300px;
+    background: linear-gradient(to right, rgb(219, 219, 219), rgb(235, 235, 235), white);
+    opacity: 0.95;
+    border-radius: 20px;
+    border: 2px solid rgb(206, 125, 125);
+}
+
+
+
+/* model X */
+
+#modelx_container {
+    position: absolute;
+    object-fit: cover;  
+    width: 100%;
+    height: 100%;
+    top: 300%;
+    z-index: 1;
+}
+
+
+.modelx_perf_list_class{
+    position: absolute;
+    top: 320%;
+    left: 5%;
+    height: 170px;
+    width: 300px;
+    background: linear-gradient(to right, rgb(219, 219, 219), rgb(235, 235, 235), white);
+    opacity: 0.95;
+    border-radius: 20px;
+    border: 2px solid rgb(206, 125, 125);
+}
+
+
+/* réhaussement du texte de la model x */
+
+#modelx_h1 { top: 15% }
+#modelx_p { top: 20% }
+
+/* fin du réhaussement du texte de la model x */
+
+
+
+/* solar panels */
+
+#solar_panels_container {
+    position: absolute;
+    object-fit: cover;  
+    width: 100%;
+    height: 100%;
+    top: 400%;
+    z-index: 1;
+}
+
+
+
+/* solar roof */
+
+#solar_roof_container {
+    position: absolute;
+    object-fit: cover;  
+    width: 100%;
+    height: 100%;
+    top: 500%;
+    z-index: 1;
+}
+
+
+
+/* accessories */
+
+#accessories_container {
+    position: absolute;
+    object-fit: cover;  
+    width: 100%;
+    height: 100%;
+    top: 600%;
+    z-index: 1;
+}
+
+#accessories_a1 {
+    background-color: black;
+}#accessories_a1:hover{background-color: rgb(55, 55, 55);}
+
+
+
+
+/* FIN MODELS */
+
+
+
+
+/* scroll to top */
+
+#top_page_scroll_svg {
+    position: fixed;
+    width: 40px;
+    bottom: 5%;
+    left: 95%;
+    background-color: rgb(120, 220, 140);
+    opacity: 0.75;
+    border-radius: 5px;
+    display: none;
+} #top_page_scroll_svg:hover {background-color: rgb(180, 255, 135);}
+
+
+/* page Up */
+
+#pageUp{
+    position: absolute;
+    bottom: -600%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+    font-size: 1.3vw;
+    cursor: default;
+}#pageUp:hover{color:rgb(170, 130, 130)}
+
+::selection {
+    background-color: whitesmoke;
+    color: goldenrod;
+}

@@ -1,0 +1,107 @@
+
+
+
+@mixin button-style ($color, $background-color, $primary-blue) {
+    height: 3rem;
+    width: 10rem;
+    border-radius: 2rem;
+    border: 0;
+    background: $background-color;
+    font-size: 1rem;
+    border: 2px solid $primary-blue;
+    cursor: pointer;
+    transition: .3s;
+
+    @if $background-color == $primary-blue {
+        color: white;
+    } @else {
+        color: $primary-blue;
+    }
+
+    &:hover {
+        @if $background-color == $primary-blue {
+            background: none;
+            color: $primary-blue;
+        } @else {
+            background: $primary-blue;
+            color: white;
+
+            .header__section__button--intro--svg {
+                background-color: #fff;
+            }
+
+            .main__section2__button--intro--svg {
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+
+@mixin button-intro ($primary-blue) {
+    display: flex;
+    position: absolute;
+
+    &--intro {
+        @include button-style($primary-blue, none, $primary-blue);
+        position: relative;
+        margin-right: 2rem;
+        padding-right: 2rem;
+
+        &--svg {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid $primary-blue;
+            border-radius: 50%;
+        }
+    }
+}
+
+
+
+@mixin article () {
+    padding: .5rem;
+    background-color: white;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+    border-radius: .4rem;
+    transition: .3s;
+
+    &:hover {
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    &__img {
+        width: 100%;
+        border-radius: .5rem;
+    }
+
+    &__title {
+        margin-top: .5rem;
+    }
+
+    &__text {
+        margin: 1rem 0;
+    }
+
+    &__price {
+        font-weight: bold;
+    }
+}
+
+
+@mixin list-style() {
+    list-style-type: none;
+    display: flex;
+
+    &__item {
+        display: flex;
+
+        &__link {
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: .5s;
+        }
+    }
+}
