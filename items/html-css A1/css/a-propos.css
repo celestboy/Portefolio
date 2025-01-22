@@ -1,0 +1,106 @@
+
+img {
+    object-fit: cover;
+}
+
+
+
+
+header {
+    width: 100%;
+}
+
+header img {
+    width: 100%;
+}
+
+
+
+h1 {
+    font-family: 'Exo 2', sans-serif;
+    text-align: center;
+    font-size: 6vw;
+    margin: 1vw 0;
+}
+
+#descriptif {
+    margin: 5vw 10vw;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 2vw;
+}
+
+#barre-div {
+    border-radius: 3px;
+    display: block;
+    margin: 3vw auto;
+    width: 90%;
+    height: 8px;
+    background-color: rgba(106, 82, 82, 0.4);
+
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 3vw;
+    font-family: 'Kanit', sans-serif;
+
+}
+
+
+
+main {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 5vw 10vw;
+    justify-content: space-around;
+}
+
+section {
+    width: 40%;
+}
+
+section img {
+    width: 100%;
+    transition: 0.2s;
+    border-radius: 10px;
+}
+section img:hover {
+    opacity: 0.7;
+}
+
+section p {
+    margin: 2vw 0;
+    cursor: default;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2vw;
+}
+
+
+
+
+
+@media screen and (max-width: 650px) {
+    nav ul {
+        margin: 0;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h2 {
+        font-size: 4vw;
+    }
+    section {
+        width: 80%;
+    }
+    section p {
+        margin: 5vw 0;
+    }
+}
+
