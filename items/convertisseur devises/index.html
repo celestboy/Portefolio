@@ -1,27 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Convertisseur de devises</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../../style.css" />
-  </head>
-  <body>
-    <form action="">
-      <h1>Convertisseur de devises</h1>
-      <input type="number" id="valeur_entree" placeholder="valeur" />
-      <select name="devise1" id="devise1">
-        <option value="">--Choisir une valeur--</option>
-      </select>
-      <select name="devise2" id="devise2">
-        <option value="">--Choisir une valeur--</option>
-      </select>
-      <h3 id="result"></h3>
-    </form>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur de Devises Pro</title>
 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1><i class="fas fa-exchange-alt"></i> Convertisseur de Devises</h1>
+                <p class="subtitle">Taux de change en temps réel</p>
+            </div>
+
+            <form class="converter-form">
+                <div class="amount-group">
+                    <label for="valeur_entree">Montant</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-coins"></i>
+                        <input type="number" id="valeur_entree" placeholder="Entrez le montant" step="0.01" min="0">
+                    </div>
+                </div>
+
+                <div class="currency-grid">
+                    <div class="currency-group">
+                        <label>De</label>
+                        <div class="select-wrapper">
+                            <i class="fas fa-globe"></i>
+                            <select name="devise1" id="devise1">
+                                <option value="">Choisir une devise</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="button" id="swap-button" class="swap-button">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+
+                    <div class="currency-group">
+                        <label>Vers</label>
+                        <div class="select-wrapper">
+                            <i class="fas fa-globe"></i>
+                            <select name="devise2" id="devise2">
+                                <option value="">Choisir une devise</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-card" id="result-card">
+                    <div class="result-header">Résultat</div>
+                    <div class="result-content">
+                        <h3 id="result">--</h3>
+                        <p id="exchange-rate">Taux de change: --</p>
+                        <p id="last-update">Dernière mise à jour: --</p>
+                    </div>
+                </div>
+
+                <div class="quick-convert">
+                    <h4>Conversions rapides</h4>
+                    <div class="quick-buttons">
+                        <button type="button" data-amount="100">100</button>
+                        <button type="button" data-amount="500">500</button>
+                        <button type="button" data-amount="1000">1000</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <i class="fas fa-clock"></i>
+                <h3>Temps réel</h3>
+                <p>Taux de change mis à jour en direct</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Fiable</h3>
+                <p>Sources de données sécurisées</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-globe"></i>
+                <h3>170+ Devises</h3>
+                <p>Toutes les devises mondiales</p>
+            </div>
+        </div>
+    </div>
+
+    
     <a href="../../index.html" class="retour_bouton">Retour</a>
 
     <script src="index.js"></script>
-  </body>
+</body>
 </html>
