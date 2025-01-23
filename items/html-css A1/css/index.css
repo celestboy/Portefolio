@@ -182,7 +182,7 @@ section img {
 
 @media screen and (max-width: 800px) {
     header div {
-        top: 20vw
+        top: 50%
     }
     main {
         display: block;
@@ -197,13 +197,8 @@ section img {
 }
 
 @media screen and (max-width: 650px) {
-    nav ul {
-        margin: 0;
-        width: 100%;
-        border-radius: 5px;
-        font-size: 4vw;
-    }
     h3 {
+        margin-top: 1rem;
         font-size: 5vw;
     }
     main p {

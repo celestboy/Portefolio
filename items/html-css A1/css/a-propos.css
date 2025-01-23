@@ -83,16 +83,11 @@ section p {
 
 
 
-@media screen and (max-width: 650px) {
-    nav ul {
-        margin: 0;
-        width: 100%;
-        border-radius: 5px;
-        font-size: 4vw;
-    }
-}
 
 @media screen and (max-width: 500px) {
+    header {
+        margin-top: 25vh;
+    }
     h2 {
         font-size: 4vw;
     }

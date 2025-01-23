@@ -53,6 +53,16 @@ nav a:hover {
 footer {
   background: var(--primary);
   color: var(--light);
-  padding: 2rem;
+  padding: 1.5rem;
+  font-size: .7rem;
   text-align: center;
+}
+
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
 }
