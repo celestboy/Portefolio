@@ -37,6 +37,7 @@ body {
             border: none;
             z-index: 20;
             margin-right: 30rem;
+            background-color: rgba(0,0,0,0);    
             cursor: pointer;
 
             &--bar {
@@ -430,8 +431,8 @@ body {
 #navResponsive {
     position: absolute;
     top: 0;
-    background-color: rgba(222, 243, 247, 0.92);
-    border-radius: 0 0 1rem 1rem;
+    background-color: rgba(245, 249, 232, 0.92);
+    border-radius: 0 0 2px 2px;
     padding: 1rem;
     z-index: 10;
  
